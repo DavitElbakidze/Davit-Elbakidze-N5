@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let colors = ["red", "green", "yellow", "black", "gray"];
+      let count = 10;
+      let countDown = setInterval(function countDown1() {
+        if (count === 0) {
+          clearInterval(countDown);
+          setTimeout(() => {
+            console.log("Finished!");
+            document.body.style.backgroundColor = "white";
+          }, 2000);
+        }
+        console.log(count--);
+        document.body.style.backgroundColor =
+          colors[Math.floor(Math.random() * colors.length)];
+      }, 1000);
+    </script>
+  </body>
+</html>
